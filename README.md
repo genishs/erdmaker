@@ -36,7 +36,12 @@ before you submit it.
 
 ## What to include in a report
 
-- **Extension version** (shown in the Extensions view)
+- **Extension version, including the build number** (required). Open the
+  Extensions view in VS Code and select ERDmaker: the version is shown next to
+  its name (for example `0.5.1`). **The last number is the build number**, so
+  `0.5.1` means build 1 of the 0.5 line. If you open the report with the
+  `ERDmaker: Report Issue / Send Feedback` command, this field is filled in
+  for you automatically.
 - **VS Code version** (`Help > About`)
 - **Operating system**
 - **Steps to reproduce** the problem, and what you expected to happen
@@ -88,7 +93,10 @@ VS Code 버전, OS 등)가 미리 채워진 신고 화면이 열립니다. 제�
 
 ### 신고에 넣어 주실 것
 
-- **확장 버전** (확장 보기에서 확인)
+- **확장 버전(빌드번호 포함, 필수)**: VS Code의 확장 보기에서 ERDmaker를 선택하면 이름 옆에
+  버전(예: `0.5.1`)이 보입니다. **마지막 숫자가 빌드번호**입니다. 즉 `0.5.1`은 0.5 라인의
+  빌드 1입니다. `ERDmaker: Report Issue / Send Feedback` 명령으로 신고 화면을 열면 이 칸은
+  자동으로 채워집니다.
 - **VS Code 버전** (`도움말 > 정보`)
 - **운영체제**
 - **재현 절차**와 기대했던 결과
