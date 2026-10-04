@@ -1,4 +1,4 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: No GitHub account? Use Marketplace Q&A / GitHub 계정이 없다면 마켓 Q&A를 이용하세요
     url: https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker&ssr=false#qna
