@@ -1,14 +1,50 @@
-# ERDmaker - Feedback & Issues
+# ERDmaker
+
+[![VS Marketplace version](https://badgen.net/vs-marketplace/v/genishs.erdmaker)](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)
+[![VS Marketplace installs](https://badgen.net/vs-marketplace/i/genishs.erdmaker)](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)
+[![Install from the VS Code Marketplace](https://img.shields.io/badge/Install%20from-VS%20Code%20Marketplace-0078d4?logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)
+
+**An ERD editor for VS Code that opens and saves Eclipse ERMaster `.erm` files.**
+Draw tables and relationships, export DDL for PostgreSQL, MySQL, MariaDB and Oracle, and compare your diagram with a live PostgreSQL database.
 
 **English** | [한국어](#한국어)
 
-This repository is the **public feedback and bug-report tracker** for
-**[ERDmaker](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)**,
-a VS Code extension for drawing and generating entity-relationship diagrams
-(Marketplace ID: `genishs.erdmaker`).
+![ERDmaker canvas showing tables, relationship lines and primary and foreign keys](assets/screenshots/canvas.png)
+
+## Install
+
+- Open the **[Marketplace page](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)** and select **Install**, or
+- in VS Code press `Ctrl+P` (`Cmd+P` on macOS), paste `ext install genishs.erdmaker` and press Enter, or
+- open the Extensions view, search for **ERDmaker**, and select **Install**.
+
+ERDmaker needs VS Code 1.85 or later. Marketplace ID: `genishs.erdmaker`.
+
+## What it does
+
+- **ERMaster compatible.** Open, edit and save `.erm` files directly. ERMaster-only settings (sequences, triggers, tablespaces, column groups) are preserved, and the file still opens in Eclipse ERMaster.
+- **DDL for four database vendors.** PostgreSQL, MySQL, MariaDB and Oracle (12c+ and 11g), with type mapping and warnings when a conversion is lossy.
+- **Compare and apply.** Diff your ERD against a live PostgreSQL database, review the generated ALTER script, then apply it in a single transaction. Destructive statements are commented out by default.
+- **Reverse-engineer** a PostgreSQL schema into an ERD; database comments become logical names.
+- **Logical and physical names**, database views, and Excel / HTML table specifications. The editor is available in English and Korean.
+
+![An Eclipse ERMaster .erm file opened in ERDmaker, with the ERD and Code tabs](assets/screenshots/ermaster.png)
+
+![DDL generated from the diagram, including foreign keys with ON DELETE and ON UPDATE actions](assets/screenshots/schema-sql-fk.png)
+
+![Choosing the ON DELETE action of a relationship from the context menu](assets/screenshots/on-delete-menu.png)
+
+ERDmaker is an independent project and is not affiliated with Eclipse ERMaster.
+It is derived from [erd-editor](https://github.com/dineug/erd-editor) (MIT).
 
 > **The source code of ERDmaker is not hosted in this repository.**
-> This repo only contains the issue tracker and its templates.
+> This repository is the public **feedback and bug-report tracker** and its issue templates only.
+
+## Quick start
+
+1. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+2. Run **ERDmaker: New Empty ERD…** to start a new `.erm` diagram, or open an existing `.erm` file by double-clicking it.
+3. To start from a database, run **ERDmaker: Import ERD from PostgreSQL**.
+4. New to ERDmaker? Run **ERDmaker: Start Tutorial**, or open **Help > Get Started** and choose **Get Started with ERDmaker**.
 
 ## How to send feedback
 
@@ -66,9 +102,28 @@ instead of your real schema.
 
 ## 한국어
 
-이 레포는 VS Code 확장
+**VS Code 에서 Eclipse ERMaster `.erm` 파일을 그대로 열고 저장하는 ERD 편집기**,
 **[ERDmaker](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)**
-(마켓 ID: `genishs.erdmaker`)의 **사용자 피드백·버그 신고 전용 공개 레포**입니다.
+(마켓 ID: `genishs.erdmaker`)입니다.
+
+### 설치
+
+- **[마켓 페이지](https://marketplace.visualstudio.com/items?itemName=genishs.erdmaker)** 에서 **설치**를 누르거나,
+- VS Code 에서 `Ctrl+P` 를 누르고 `ext install genishs.erdmaker` 를 붙여 넣은 뒤 Enter, 또는
+- 확장 보기에서 **ERDmaker** 를 검색해 **설치**합니다.
+
+VS Code 1.85 이상이 필요합니다.
+
+### 할 수 있는 일
+
+- **ERMaster 호환**: `.erm` 을 직접 열고 편집·저장합니다. ERMaster 전용 설정(시퀀스·트리거·테이블스페이스·컬럼 그룹)은 보존되어 Eclipse ERMaster 에서도 다시 열립니다.
+- **DDL 내보내기**: PostgreSQL · MySQL · MariaDB · Oracle(12c 이상·11g). 타입 변환 경고를 DDL 머리에 적어 줍니다.
+- **비교·반영**: ERD 와 실제 PostgreSQL 데이터베이스를 비교해 ALTER 스크립트를 만들고, 확인한 뒤 한 트랜잭션으로 반영합니다. 위험한 문장(삭제 등)은 기본으로 주석 처리됩니다.
+- **가져오기**: PostgreSQL 스키마를 ERD 로 가져오며, DB 코멘트는 논리명이 됩니다.
+- **논리명·물리명**, 뷰, Excel/HTML 테이블 정의서. 편집기는 영어와 한국어를 지원합니다.
+
+DB 직접 연결(가져오기·비교·반영)은 현재 **PostgreSQL 만** 지원합니다.
+ERDmaker 는 독립 프로젝트이며 Eclipse ERMaster 와 제휴 관계가 아닙니다.
 
 > **ERDmaker의 소스 코드는 이 레포에 없습니다.**
 > 이 레포에는 이슈 트래커와 신고 양식만 있습니다.
